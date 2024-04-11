@@ -9,9 +9,8 @@ s3 = boto3.client(
 )
 
 # Define the bucket name
-bucket_name = 'minecraft-tercero-jesus'
-
+buckets=['entrada','procesado','junto']
 # Create the bucket
-s3.create_bucket(Bucket=bucket_name)
-
-print(f"Bucket '{bucket_name}' created successfully.")
+for bucket_name in buckets:
+    s3.create_bucket(Bucket=bucket_name)
+    print(f"Bucket '{bucket_name}' created successfully.")

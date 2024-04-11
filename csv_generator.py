@@ -20,14 +20,18 @@ data = [['Date,','Store_ID','Product_ID' ,'Quantity_Sold','Revenue']]
 for _ in range(2000):
 
     year=random.randint(0,26) + 1997
-    mont=random.randint(1,13)
+    mont=random.randint(1,12)
     if mont==2:
         day = random.randint(1,29)
     elif mont % 2:
-        day = random.randint(1,32)
-    else:
         day = random.randint(1,31)
+    else:
+        day = random.randint(1,30)
     rng = random.randint(0,100)
+    if len(str(day)) < 2:
+        day = f'0{day}'
+    if len(str(mont)) < 2:
+        mont = f'0{mont}'
     if rng > 95:
         Date = f'{day}-{mont}-{year}'
     else:
@@ -48,4 +52,4 @@ for _ in range(2000):
         else:
             apend_data[error_selected]=get_random_string(random.randint(3,12))
     data.append(apend_data)
-create_csv_file('.\eval_3\Apli_BD\sales_data.csv',data)
+create_csv_file('.\sales_data.csv',data)

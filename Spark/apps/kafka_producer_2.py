@@ -9,7 +9,6 @@ producer = KafkaProducer(bootstrap_servers=['localhost:9092'],
 
 while True:
     
-    #[TODO]Tienes que cambiarlo para hacer todos los campos random
     message = {
         "timestamp": int(datetime.now().timestamp()),
         "store_id": random.randint(0,60),

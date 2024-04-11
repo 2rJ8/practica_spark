@@ -17,7 +17,7 @@ def read_from_postgres():
     }
 
     # Define table name
-    table_name = "ExampleData"
+    table_name = "Stores"
 
     try:
         # Read data from PostgreSQL table into a DataFrame

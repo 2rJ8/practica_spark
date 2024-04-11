@@ -20,8 +20,8 @@ spark = SparkSession.builder \
     .getOrCreate()
 
 bucket_name = 'minecraft-tercero-jesus'
-path="./borrar/"
-df = spark.read.csv(path).selectExpr("_c0 as timestamp", "_c1 as store_id", "_c2 as product_id", "_c3 as quantity_sold", "_c4 as revenue")
+path="/opt/spark-data/sales_data.csv"
+df = spark.read.option("header", True).csv(path)#.selectExpr("_c0 as timestamp", "_c1 as store_id", "_c2 as product_id", "_c3 as quantity_sold", "_c4 as revenue")
 
 try:
     df.write.option("header", True).csv(f"s3a://{bucket_name}/example_data_1.csv")
