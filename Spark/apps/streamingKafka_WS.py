@@ -35,7 +35,7 @@ df = df.selectExpr("CAST(value AS STRING)") \
 
 df.printSchema()
 df = df.filter(df.revenue > 500)
-#df.write.csv('./borrar/mycsv.csv')
+#df.write.option("header", True).csv('./borrar/mycsv.csv')
 
 # Start the computation
 
