@@ -14,3 +14,8 @@ buckets=['entrada','procesado','junto']
 for bucket_name in buckets:
     s3.create_bucket(Bucket=bucket_name)
     print(f"Bucket '{bucket_name}' created successfully.")
+
+
+
+# awslocal s3api list-buckets
+# awslocal s3api list-objects --bucket sample-bucket
